@@ -56,6 +56,29 @@ class jk_wp_post_bookmarks
         <?php
     }
 
+    public static function the_bookmark_sub_menu($user_id)
+    {
+
+        ?>
+
+        <div class="bookmarks-sub-menu">
+
+            <div class="sub-menu-toggle">
+
+            </div>
+
+            <div class="sub-menu">
+
+            </div>
+
+        </div>
+
+        <?php
+
+        die();
+
+    }
+
     public function ajax_handler()
     {
 
