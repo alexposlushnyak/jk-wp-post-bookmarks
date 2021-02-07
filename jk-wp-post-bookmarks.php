@@ -135,6 +135,21 @@ class jk_wp_post_bookmarks
 
     }
 
+    public function ajax_handler_remove()
+    {
+
+        $post_id = $_POST['post_id'];
+
+        $user_id = $_POST['user_id'];
+
+        $active = $_POST['active'];
+
+        $bookmarks = get_option('bookmarks_user_' . $user_id);
+
+        die();
+
+    }
+
     public function init(){
 
         add_action('wp_ajax_nopriv_jk_bookmarks', [$this, 'ajax_handler']);
@@ -144,6 +159,10 @@ class jk_wp_post_bookmarks
         add_action('wp_ajax_nopriv_jk_bookmarks_sub_menu_add', [$this, 'ajax_handler_add']);
 
         add_action('wp_ajax_jk_bookmarks_sub_menu_add', [$this, 'ajax_handler_add']);
+
+        add_action('wp_ajax_nopriv_jk_bookmarks_sub_menu_remove', [$this, 'ajax_handler_remove']);
+
+        add_action('wp_ajax_jk_bookmarks_sub_menu_remove', [$this, 'ajax_handler_remove']);
 
     }
 
